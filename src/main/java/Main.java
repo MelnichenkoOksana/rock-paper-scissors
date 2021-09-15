@@ -1,8 +1,14 @@
+import com.github.freva.asciitable.AsciiTable;
+//import AsciiTable.java;
+
 public class Main {
     public static void main(String[] args) {
-Rules rules = new Rules();
-        String[][] a = rules.fillingTable(args);
 
-        System.out.println(a);
+        String array[] = {"камень", "бумага", "ножницы"};
+        Rules rules = new Rules();
+        String[][] a = rules.fillingTable(array);
+
+        System.out.println(AsciiTable.getTable(a));
     }
+
 }
