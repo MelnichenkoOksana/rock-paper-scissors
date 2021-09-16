@@ -1,11 +1,13 @@
 import java.util.HashSet;
 
 public class Control {
+
     public boolean checkingOdd(String[] a) {
         boolean flag = true;
         if (a.length % 2 == 0) {
             flag = false;
-            System.out.println("Enter an odd number of parameters");
+            System.out.println("You have entered even "+a.length+" of parametrs, " +
+                    "the amount of the parameters must be odd (e.g. 3,5,7, etc.");
         }
         return flag;
     }

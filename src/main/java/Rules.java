@@ -1,14 +1,11 @@
+import com.github.freva.asciitable.AsciiTable;
+
 public class Rules {
 
     private String[] keys;
     private String ruleTable[][];
 
     public Rules() {
-    }
-
-    public Rules(String[] keys) {
-        this.keys = keys;
-        String ruleTable[][] = fillingTable(keys);
     }
 
     public String[][] fillingTable(String[] keys) {
@@ -25,6 +22,10 @@ public class Rules {
             }
         }
         return ruleTable;
+    }
+
+    public void printTable(String[][] a) {
+        System.out.println(AsciiTable.getTable(a));
     }
 
     public String[] getKeys() {
