@@ -1,6 +1,5 @@
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.security.SecureRandom;
 import java.util.Random;
@@ -8,7 +7,8 @@ import java.util.Random;
 
 public class ComputerTurn {
 
-    public static String bytesToHex(byte[] bytes) throws UnsupportedEncodingException {
+    public static String bytesToHex(byte[] bytes) {
+
 
         StringBuilder sb = new StringBuilder(bytes.length * 2);
         for (byte b : bytes) {

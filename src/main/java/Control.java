@@ -1,17 +1,33 @@
 import java.util.HashSet;
 
 public class Control {
+    private String[] array;
 
-    public boolean checkingOdd(String[] a) {
+
+    public Control(){
+
+    }
+
+    // какая-то херня. Это должно быть в конструктое?  не похоже
+    public static void MainControl(String[] array) {
+        boolean a = checkingForEmptiness(array);
+        boolean b = checkingOdd(array);
+        boolean c = checkingUniqueness(array);
+        if (a&&b&&c) {
+            System.out.println("Start play");
+        } else System.exit(0);
+    }
+
+    public static boolean checkingOdd(String[] a) {
         boolean flag = true;
         if (a.length % 2 == 0) {
             flag = false;
             System.out.println("You have entered even "+a.length+" of parametrs, " +
-                    "the amount of the parameters must be odd (e.g. 3,5,7, etc.");
+                    "the amount of the parameters must be odd (e.g. 3,5,7, etc.)");
         }
         return flag;
     }
-    public boolean checkingUniqueness (String[] a) {
+    public static boolean checkingUniqueness(String[] a) {
         boolean flag = true;
         HashSet<String> hashSet = new HashSet<>();
         for (String elem:
@@ -24,7 +40,7 @@ public class Control {
         }
         return flag;
     }
-    public boolean checkingForEmptiness(String[] a) {
+    public static boolean checkingForEmptiness(String[] a) {
         boolean flag = true;
         if (a.length <3) {
             flag = false;
