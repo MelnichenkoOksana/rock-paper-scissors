@@ -13,7 +13,7 @@ public class Play {
         Rules rules = new Rules();
         String[][] rulesTable = rules.fillingTable(array);
 
-        System.out.println(hmac);
+        System.out.println("HMAC: "+ hmac);
 
         Play.printMenu(array);
         String playerNum = playerSelection();
@@ -66,6 +66,7 @@ public class Play {
     }
 
     public static void printMenu(String[] array) {
+        System.out.println("Available moves:");
         for (int i = 1; i <= array.length; i++) {
             System.out.print(i + " - ");
             System.out.println(array[i - 1]);
