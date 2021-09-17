@@ -1,14 +1,11 @@
 import java.util.HashSet;
 
 public class Control {
-    private String[] array;
-
 
     public Control(){
 
     }
 
-    // какая-то херня. Это должно быть в конструктое?  не похоже
     public static void MainControl(String[] array) {
         boolean a = checkingForEmptiness(array);
         boolean b = checkingOdd(array);

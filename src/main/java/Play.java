@@ -31,21 +31,25 @@ public class Play {
         while (flag) {
             if (s.equals("?")){
                 Rules.printTable(rulesTable);
-                Play.printMenu(array);  // дублирование?
+                Play.printMenu(array);
                 s= playerSelection();
             } else if (s.equals("0")) {
                 System.exit(0);
                 flag = false;
-            } else if ((1<=Integer.parseInt(s))&&(Integer.parseInt(s)<= array.length)) {
+            } else if ((isNumeric(s))&&(1<=Integer.parseInt(s))&&(Integer.parseInt(s)<= array.length)) {
                 Play.printMoves(array, Integer.parseInt(s), computerNum);
                 Play.selectionWinner(rulesTable, Integer.parseInt(s), computerNum);
                 flag = false;
             } else {
-                Play.printMenu(array);  // дублирование??
+                Play.printMenu(array);
                 s= playerSelection();
             }
 
         }
+    }
+
+    public static boolean isNumeric(String str) {
+        return str.matches("-?\\d+(\\.\\d+)?");
     }
 
  public  static void printMoves (String[] array, int playerNum, int computerNum){
@@ -73,10 +77,10 @@ public class Play {
 
     public static void selectionWinner(String[][] rulesTable, int playerNum, int computerNum) {
 
-        if (rulesTable[computerNum][playerNum] == "WIN") {
+        if (rulesTable[computerNum][playerNum].equals("WIN")) {
             System.out.println("Congratulations! You won!");
         }
-        if (rulesTable[computerNum][playerNum] == "LOSE") {
+        if (rulesTable[computerNum][playerNum].equals("LOSE")) {
             System.out.println("Bad luck. The computer won.");
         } else {
             System.out.println("This time it's a draw");

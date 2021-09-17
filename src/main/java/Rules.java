@@ -2,8 +2,7 @@ import com.github.freva.asciitable.AsciiTable;
 
 public class Rules {
 
-    private String[] keys;
-    private String ruleTable[][];
+   private String ruleTable[][];
 
     public Rules() {
     }
@@ -29,20 +28,5 @@ public class Rules {
         System.out.println(AsciiTable.getTable(a));
     }
 
-    public String[] getKeys() {
-        return keys;
-    }
-
-    public void setKeys(String[] keys) {
-        this.keys = keys;
-    }
-
-    public String[][] getRuleTable() {
-        return ruleTable;
-    }
-
-    public void setRuleTable(String[][] ruleTable) {
-        this.ruleTable = ruleTable;
-    }
 }
 

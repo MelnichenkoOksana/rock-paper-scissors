@@ -17,24 +17,17 @@ public class ComputerTurn {
         return sb.toString();
     }
 
-
-    // Создать ключь для шифрования
     public byte[] createKey() {
         SecureRandom random = new SecureRandom();
         byte[] key = random.generateSeed(16);
         return key;
     }
 
-
-    // Выбрать случайный ход
     public int numberSelection(int numberOptions) {
         Random randNumber = new Random();
         int number = randNumber.nextInt(numberOptions - 1) + 1;
         return number;
     }
-
-
-    // Зашифровать этот ход при помощи ключа
 
     static public byte[] calcHmacSha256(byte[] key, int number) {
         byte[] hmacSha256 = null;
@@ -42,7 +35,7 @@ public class ComputerTurn {
             Mac mac = Mac.getInstance("HmacSHA256");
             SecretKeySpec secretKeySpec = new SecretKeySpec(key, "HmacSHA256");
             mac.init(secretKeySpec);
-            hmacSha256 = mac.doFinal(ByteBuffer.allocate(4).putInt(number).array());// а какая здесь кодировка???
+            hmacSha256 = mac.doFinal(ByteBuffer.allocate(4).putInt(number).array());
         } catch (Exception e) {
             throw new RuntimeException("Failed to calculate hmac-sha256", e);
         }
